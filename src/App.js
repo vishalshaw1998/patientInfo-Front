@@ -40,7 +40,7 @@ function App() {
         }
         axios({
             method: "GET",
-            url: `http://localhost:3001/room/${roomNumber.current.value}`,
+            url: `https://murmuring-plains-97224.herokuapp.com/room/${roomNumber.current.value}`,
         }).then((res) => {
             if (res.data.data.length === 0) {
                 let tempArr = new Array(parseInt(patientNumber.current.value))
@@ -100,7 +100,7 @@ function App() {
         setarr(tempArr);
         axios({
             method: "post",
-            url: "http://localhost:3001/data",
+            url: "https://murmuring-plains-97224.herokuapp.com/data",
             data: arr,
         }).then((res) => {
             if (res.data.data) {
@@ -116,7 +116,7 @@ function App() {
         setloading(true);
         axios({
             method: "get",
-            url: `http://localhost:3001/room/${roomNum.current.value}`,
+            url: `https://murmuring-plains-97224.herokuapp.com/room/${roomNum.current.value}`,
         }).then((res) => {
             setroomData(res.data.data);
             setloading(false);
